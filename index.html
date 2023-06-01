@@ -1,0 +1,337 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0336)http://10.20.200.252/ess/commonauth?wlanuserip=5a978812e73a8388beda293214489b50&wlanacname=cf445b4bae0b5340c2083fbe633d3b64&ssid=fb88fd4ace5c47785ceda92c489fcdc0&nasip=66dfcca964468a7b0d5271a2c8113e00&mac=440ec326dc5a60fa28b5a48c68838013&t=wireless-v2&url=096e8e7059e430e05980c3c547fed4ab7ccaeae90dfffda4ace4874ac81c5ad69031883e2cfd5141 -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=GBK">
+		<meta http-equiv="X-UA-Compatible" content="IE=9;IE=8;IE=5;">
+		<title>web认证</title>
+		<style type="text/css">
+			.tip_text{font-size:12px;margin-top: 5px;color: #ffffff;text-align: center;}
+			.ssidDiv_css{float: right;top: 25px;width:425px; height:90px;right:20px;position: relative;text-align:center;margin-left: auto;margin-right: auto;}
+			*+html .ssidlineDiv_css {display:inline; zoom:1; }/* IE7*/
+			* html .ssidlineDiv_css {display:inline; zoom:1; } /* IE6 */
+			.ssidDiv_css a {text-decoration:none; }
+			.ssidlineDiv_css{display:inline-block;list-style:list-style-image;text-align:left;margin-left:auto;margin-right:auto;}
+			.ssid_dl_css{margin-left: 20px;}
+			/*
+			公告栏内框
+			*/
+			.bulletin_content_inside {
+				background-color: #ffffff;
+				font-family: "微软雅黑", "Microsoft YaHei";
+				color: #565656;
+				font-size: 16px;
+				line-height: 30px;
+				padding: 20px;
+				word-break:break-all;
+			}
+			.text_notice1 {
+				font: 12px/20px Arial, Helvetica, sans-serif;
+				color: #ffffff;
+				word-break:break-all;
+			}
+		</style>
+		<link rel="stylesheet" type="text/css" href="portal_login.css">
+		<meta http-equiv="X-UA-Compatible" content="requiresActiveX=true">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,width=device-width">
+	</head>
+	<body onload="init()">
+		<img src="pc_bg.jpg" width="100%" height="100%" style="z-index:-1000;position:absolute;left:0;top:0">
+		<form id="loginForm" name="loginForm" method="post" action="http://10.20.200.252/ess/commonauth" onsubmit="return false">
+			<input id="kind" name="kind" type="hidden" value="preLogin">
+			<input id="isEnableNickNameAuth" name="isEnableNickNameAuth" type="hidden" value="">
+			<input id="mac" name="mac" type="hidden" value="F88C21EBAE91">
+			<input id="port" name="port" type="hidden" value="0">
+			<input id="urlBeforeLogon" name="urlBeforeLogon" type="hidden" value="http://www.msftconnecttest.com/redirect">
+			<input id="vid" name="vid" type="hidden" value="">
+			<input id="ssid" name="ssid" type="hidden" value="lsfz-Guest-Auth">
+			<input id="apmac" name="apmac" type="hidden" value="">
+			<input id="userIp" name="userIp" type="hidden" value="172.16.0.96">
+			<input id="t" name="t" type="hidden" value="wireless-v2">
+			<input id="enableEsaAuthen" name="enableEsaAuthen" type="hidden" value="">
+			<input id="nasIp" name="nasIp" type="hidden" value="10.20.200.253">
+			<input id="enableNormalUserLogin" name="enableNormalUserLogin" type="hidden" value="true">
+			<input id="normalUserNotifyMd5Cookie" name="normalUserNotifyMd5Cookie" type="hidden" value="">
+			<input id="findPswUrl" name="findPswUrl" type="hidden" value="./passwordprotectionservlet?kind=toFindPasswordPage&amp;userIp=172.16.0.96">
+			<input id="lastUserId" name="lastUserId" type="hidden" value="">
+			<input id="readPasswordFromCookie" name="readPasswordFromCookie" type="hidden" value="">
+			<input id="passwordInCookie" name="passwordInCookie" type="hidden" value="">
+			<input id="userIdInCookie" name="userIdInCookie" type="hidden" value="">
+			<input id="sccpServerPort" name="sccpServerPort" type="hidden" value="53">
+			<input id="sccpEncrytKey" name="sccpEncrytKey" type="hidden" value="ded7f05c25ef63be">
+			<input id="sccpEncrytIV" name="sccpEncrytIV" type="hidden" value="ded7f05c25ef63be">
+			<input id="sccpClientPort" name="sccpClientPort" type="hidden" value="138">
+			<input id="sccpServerIp" name="sccpServerIp" type="hidden" value="10.20.200.252">
+			<input id="sccpTimestamp" name="sccpTimestamp" type="hidden" value="1685585820">
+			<input id="commonUsernameInputTip" type="hidden" value="用户名">
+			<input id="commonPwdInputTip" type="hidden" value="密码">
+			<input id="commonDisclaimerEnable" name="commonDisclaimerEnable" type="hidden" value="false">
+			<input id="disclaimerTitle" name="disclaimerTitle" type="hidden" value="">
+			<input id="disclaimerContent" type="hidden" value="">
+			<input id="disclaimerLoginBtn" name="disclaimerLoginBtn" type="hidden" value="">
+			<input id="loginActionName" name="loginActionName" type="hidden" value="./commonauth">
+			<input id="loginUrl" name="loginUrl" type="hidden" value="commonauth">
+			<input id="isSubmit" name="isSubmit" type="hidden" value="">
+			<input id="exponent" name="exponent" type="hidden" value="10001">
+			<input id="module" name="module" type="hidden" value="83a58f952c1f2374d81f795284d4f9e3737a2cbc1e9525865fdad6ee0f5752ba57767dc2c81ea028013f41fbd09f312b0eb8ab2a58392329355166430a5e0fabb03cb0c9310054dc8a9c6b16672a9c7076b5717259a0757b2ba75c47a75661bb8f8ebef918359fe657d98a70cb056fc81b668f13af6d6008fdddea678dc671a3">
+			<input id="isFromCookie" name="isFromCookie" type="hidden" value="false">
+			<input id="encryptIp" name="encryptIp" type="hidden" value="5a978812e73a8388beda293214489b50">
+			
+			<div id="pageDiv" style="margin:auto;position:relative">
+				
+				<div id="ssidDiv" class="ssidDiv_css">
+					<div class="ssidlineDiv_css">
+					<a href="javascript:window.location.href=window.location.href;">
+						<dl class="ssid_dl_css">
+							<dt><img border="0" src="common_select.png"></dt>
+							<dt class="tip_text">账号</dt>
+						</dl>
+					</a>
+					</div>
+					
+					
+					
+					<div class="ssidlineDiv_css">
+					<a href="javascript:navitoTabClick(&#39;commonauth&#39;,&#39;qrcodeservlet&#39;)">
+						<dl class="ssid_dl_css">
+							<dt><img border="0" src="qrcode_unselect.png"></dt>
+							<dt class="tip_text">扫码</dt>
+						</dl>
+					</a>
+					</div>
+					
+					
+					<div class="ssidlineDiv_css">
+					<a href="javascript:navitoTabClick(&#39;commonauth&#39;,&#39;qrcodecardservlet&#39;)">
+						<dl class="ssid_dl_css">
+							<dt><img border="0" src="qrcodecard_unselect.png"></dt>
+							<dt class="tip_text">名片</dt>
+						</dl>
+					</a>
+					</div>
+					
+					
+					
+					
+				</div>
+				
+
+				<div id="tip" class="tip">
+					
+					<div class="tip2">
+						<p>欢迎来到岭南师范学院附属中学，请文明上网</p><p>欢迎来到岭南师范学院附属中学，请文明上网</p>
+					</div>
+				</div>
+				<div id="bulletin_div" class="bulletin" style="display:none">
+					<div class="bulletin_banner">
+						<div id="closeImage" class="bulletin_op" onclick="opBulletin(&#39;2&#39;)"></div>
+					</div>
+					<div class="bulletin_content_out">
+						<div class="bulletin_content_inside">
+							 
+						</div>
+					</div>
+				</div>
+				<div id="formDiv" class="form_div" style="margin-top: 20px;height: 420px">
+					<div class="common_icon flower"></div>
+					<div class="title">用户登录</div>
+					<div style="height:118px"></div>
+					<div id="login_box_username" class="login_box_username"> 
+						<input id="userId" name="userId" type="text" class="login_box" value="用户名" onmousedown="codeInputOnmousedown(&#39;userId&#39;)" onfocus="codeInputOnmousedown(&#39;userId&#39;)" onblur="codeInputOnblur(&#39;userId&#39;)">
+					</div>
+					<div id="login_box_password" class="login_box_password"><!--name="passwordText"  -->
+						<input id="passwordText" type="text" class="login_box" value="密码" onfocus="textInputOnFocus(&#39;passwordText&#39;,&#39;password&#39;)">
+						<input id="password" name="password" type="password" class="login_box" style="display:none" onblur="textInputOnblur(&#39;passwordText&#39;,&#39;password&#39;)" onkeydown="keyLogin(event)">
+					</div>
+					
+					
+					
+					<div id="remember_area_div" class="remember_area_div">
+						<div class="remember_pwd">
+							
+								
+									<input id="enableCookie" name="enableCookie" type="checkbox" value="" onclick="rememberPassword()" checked="checked">&nbsp;记住密码
+								
+								
+							
+						</div>
+						
+					</div>
+					<div class="button_area_div">
+						<div class="text_20_button_orange" onclick="doLogin()">登 录</div>
+						
+					</div>
+					<div class="download_div">
+						<div class="text_12" style="float:left">
+							
+						</div>
+						<div class="text_12" style="float:left;margin-left:20px">
+							
+						</div>
+						<div class="text_12" style="float:right">
+							
+						</div>
+					</div>
+				</div>
+				
+			</div>
+		</form>
+		<script language="JavaScript" src="common_user_auth_login.js">
+		</script>
+		<script language="JavaScript">
+		function forbidBackSpace() {
+			var e=window.event;
+		       var keycode = e.keyCode;
+		       if(keycode == '8'){
+		    	   var src = e.srcElement || e.target;
+		           var tag = src.tagName;
+		           if (tag != "INPUT" && tag != "TEXTAREA") {
+		               e.returnValue = false;
+		               return false;
+		           } else if ((tag == "INPUT" || tag == "TEXTAREA") && src.readOnly == true) {
+		               e.returnValue = false;
+		               return false;
+		           }
+
+		       }
+
+		   }
+		   document.onkeydown = forbidBackSpace;
+		   document.onkeypress = forbidBackSpace;
+			function navitoTabClick(src,dst){
+				var fullUrl = window.location.href;
+				var queryString = window.location.search.substr(1);
+				if(null == queryString || "" == queryString){
+					var nasIp =document.getElementById("nasIp").value;
+					var mac = document.getElementById("mac").value;
+					var userIp=document.getElementById("userIp").value;
+					var t=document.getElementById("t").value;
+					var url = document.getElementById("urlBeforeLogon").value;
+					var ssid = document.getElementById("ssid").value;
+					var port = document.getElementById("port").value;
+					fullUrl = fullUrl+"?userIp="+userIp+"&mac="+mac+"&nasIp="+nasIp
+							+"&t="+t+"&ssid="+ssid+"&port="+port+"&url="+encodeURI(url);
+				}
+				src="/"+src+"?";
+				dst="/"+dst+"?";
+				fullUrl=fullUrl.replace(src,dst);
+				window.location.href = fullUrl;
+			}
+
+			function init(){
+				openDisclaimer();
+				var e=document.getElementById("pageDiv");
+				var t=window.screen.width;
+				if(t > 1200){
+					e.style.width=1200;
+				} else {
+					e.style.width=t-50;
+				}
+				var n=document.getElementById("gonggao");
+				if(window.innerWidth<window.innerHeight){
+					if(window.innerWidth<800){
+						n.style.width="300px";
+					}else if(window.innerWidth>1e3){
+						n.style.width="53%";
+					}
+				}
+				var clientWidth = document.body.clientWidth;
+				var gapWidth;
+				if(clientWidth > 1600){
+					gapWidth = clientWidth/2 - 700;
+					var leftDiv=document.getElementById("tip");
+					var rightDiv=document.getElementById("formDiv");
+					var ssidDiv=document.getElementById("ssidDiv");
+					var noticeDiv=document.getElementById("noticeDiv");
+
+					leftDiv.style.left = gapWidth + "px";
+					rightDiv.style.right = gapWidth + "px";
+					noticeDiv.style.right = gapWidth + "px";
+					ssidDiv.style.right = gapWidth + "px";
+				}
+				var r=CookieHelper.getCookie("enableCookie");
+				var tempUserId = $("userIdInCookie").value;
+				if(tempUserId != ''){
+					document.getElementById("userId").value = tempUserId;
+				}
+				
+				var userIdSaveInCookie = CookieHelper.getCookie("userIdSaveInCookie");
+				if(userIdSaveInCookie != ""){
+				  document.getElementById("userId").value = userIdSaveInCookie;
+				}
+
+				var s=$("passwordInCookie").value;
+				if(s!=""){
+					document.getElementById("password").value=s;
+					document.getElementById("passwordText").style.display="none";
+					document.getElementById("password").style.display="";
+				}if(r=="false"){
+					document.getElementById("enableCookie").checked=false;
+					CookieHelper.setCookie("enableCookie","false",365);
+				}else{
+					document.getElementById("enableCookie").checked=true;
+					CookieHelper.setCookie("enableCookie","true",365)
+				}
+			}
+
+			function openDisclaimer() {
+				var enableDisclamier = document.getElementById("commonDisclaimerEnable").value;
+				if(enableDisclamier == "true"){
+					var title = document.getElementById("disclaimerTitle").value;
+					var content = document.getElementById("disclaimerContent").value;
+					var btn = document.getElementById("disclaimerLoginBtn").value;
+				    disclaimerDialog(title, content, btn, 700, 500);
+				}
+			}
+
+			function login(){
+				var t=$("password").value;
+				var s=$("passwordInCookie").value;
+				if($("esaAuthenType")==null||$("esaAuthenType").value!="tls"){
+					var e=$("userId").value;
+					if(e==""||e==$("commonUsernameInputTip").value){
+						alert("用户名不允许为空！");
+						document.getElementById("userId").focus();
+						return false
+					}if(t==""||t==$("commonPwdInputTip").value){
+						alert("密码不允许为空！");
+						document.getElementById("passwordText").focus();
+						return false
+					}
+				}
+				var type = $("t").value;
+			    if(t == s){
+					document.getElementById('isFromCookie').value = "true";
+				}
+				if(document.getElementById("enableEsaAuthen").value=="true"
+						&& !(type == "wireless-v2" || type == "WifiDog")){
+					if(PortalClientUtils.isAuthenByPortalClient()){
+						PortalClientUtils.syncAuthen(sumitAfterPorterAuthen);
+					}else{
+						//alert("您的浏览器未安装或不支持ESA认证控件！");
+						authSubmit(t);
+					}
+				}else{
+				    authSubmit(t);
+				}
+			}
+
+			function authSubmit(t){
+
+				document.getElementById('password').value = encryptedPwd(t);
+				document.getElementById("kind").value="preLogin";
+				document.loginForm.action=document.getElementById("loginActionName").value;
+				var userId = document.getElementById("userId").value;
+				CookieHelper.setCookie("userIdSaveInCookie", userId, 365);
+				document.loginForm.submit();
+			}
+
+			function opBulletin(e){
+				var t=document.getElementById("bulletin_div");
+				if(e=="1"){
+					t.style.display=""
+				}else{
+					document.getElementById("bulletin_div").style.display="none"
+				}
+			}
+		</script>
+	
+</body></html>

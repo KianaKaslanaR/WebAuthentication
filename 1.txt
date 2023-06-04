@@ -1,0 +1,41 @@
+<div id="formDiv" class="form_div" style="margin-top: 20px;height: 420px">
+					<div class="common_icon flower"></div>
+					<div class="title">用户登录</div>
+					<div style="height:118px"></div>
+					<div id="login_box_username" class="login_box_username"> 
+						<input id="userId" name="userId" type="text" class="login_box" value="用户名" onmousedown="codeInputOnmousedown(&#39;userId&#39;)" onfocus="codeInputOnmousedown(&#39;userId&#39;)" onblur="codeInputOnblur(&#39;userId&#39;)">
+					</div>
+					<div id="login_box_password" class="login_box_password"><!--name="passwordText"  -->
+						<input id="passwordText" type="text" class="login_box" value="密码" onfocus="textInputOnFocus(&#39;passwordText&#39;,&#39;password&#39;)">
+						<input id="password" name="password" type="password" class="login_box" style="display:none" onblur="textInputOnblur(&#39;passwordText&#39;,&#39;password&#39;)" onkeydown="keyLogin(event)">
+					</div>
+					
+					
+					
+					<div id="remember_area_div" class="remember_area_div">
+						<div class="remember_pwd">
+							
+								
+									<input id="enableCookie" name="enableCookie" type="checkbox" value="" onclick="rememberPassword()" checked="checked">&nbsp;记住密码
+								
+								
+							
+						</div>
+						
+					</div>
+					<div class="button_area_div">
+						<div class="text_20_button_orange" onclick="doLogin()">登 录</div>
+						
+					</div>
+					<div class="download_div">
+						<div class="text_12" style="float:left">
+							
+						</div>
+						<div class="text_12" style="float:left;margin-left:20px">
+							
+						</div>
+						<div class="text_12" style="float:right">
+							
+						</div>
+					</div>
+				</div>
